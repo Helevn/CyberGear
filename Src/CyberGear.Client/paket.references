@@ -1,0 +1,12 @@
+log4net
+HandyControl
+MediatR
+Microsoft.AspNetCore
+Microsoft.AspNetCore.Cors
+Microsoft.Extensions.Logging.Debug
+Microsoft.Extensions.Logging.Log4Net.AspNetCore
+Newtonsoft.Json
+Microsoft.Extensions.Hosting
+Microsoft.Extensions.Hosting.Abstractions
+ReactiveProperty.WPF
+ReactiveProperty

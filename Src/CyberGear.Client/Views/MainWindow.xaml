@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="CyberGear.Client.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vms="clr-namespace:CyberGear.Client.ViewModels"
+    Width="800"
+    Height="450"
+    d:DataContext="{d:DesignInstance Type=vms:AppViewModel}"
+    Closed="Window_Closed"
+    Closing="Window_Closing"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+    <Window.Title>
+        <MultiBinding StringFormat="{}{0} ({1})">
+            <Binding Source="{StaticResource AppName}" />
+        </MultiBinding>
+    </Window.Title>
+
+    <DockPanel
+        Name="main"
+        Background="#F9F9F9"
+        LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top">
+            <!--  状态栏  -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Margin="16,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="CyberGear" />
+            </Grid>
+        </StackPanel>
+        <Frame
+            Name="navWin"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+            Background="#FF1E3853"
+            DockPanel.Dock="Left"
+            NavigationUIVisibility="Hidden"
+            ScrollViewer.HorizontalScrollBarVisibility="Visible"
+            ScrollViewer.VerticalScrollBarVisibility="Visible" />
+    </DockPanel>
+</Window>

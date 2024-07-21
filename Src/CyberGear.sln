@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COM.CAN", "COM.CAN\COM.CAN.csproj", "{1A32DDEA-8452-40D4-B213-7A1920DD1C20}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberGear.Client", "CyberGear.Client\CyberGear.Client.csproj", "{84456A35-463D-4D40-9FFE-49C00E03EE24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberGear.Shared", "CyberGear.Shared\CyberGear.Shared.csproj", "{5F647E86-9BDA-4913-81EA-CDFEAE3A5E9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{1A32DDEA-8452-40D4-B213-7A1920DD1C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A32DDEA-8452-40D4-B213-7A1920DD1C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A32DDEA-8452-40D4-B213-7A1920DD1C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84456A35-463D-4D40-9FFE-49C00E03EE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84456A35-463D-4D40-9FFE-49C00E03EE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84456A35-463D-4D40-9FFE-49C00E03EE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84456A35-463D-4D40-9FFE-49C00E03EE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F647E86-9BDA-4913-81EA-CDFEAE3A5E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F647E86-9BDA-4913-81EA-CDFEAE3A5E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F647E86-9BDA-4913-81EA-CDFEAE3A5E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F647E86-9BDA-4913-81EA-CDFEAE3A5E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

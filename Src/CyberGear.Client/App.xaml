@@ -1,0 +1,25 @@
+﻿<Application
+    x:Class="CyberGear.Client.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:CyberGear.Client"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    ShutdownMode="OnExplicitShutdown"
+    Startup="Application_Startup">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--  HandyControl  -->
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
+
+                <ResourceDictionary>
+                    <sys:String x:Key="AppName">上位机系统</sys:String>
+                    <sys:String x:Key="Manufacturer">CyberGear</sys:String>
+                    <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
+                </ResourceDictionary>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

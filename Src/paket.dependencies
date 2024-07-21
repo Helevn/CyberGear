@@ -5,3 +5,13 @@ storage: none
 framework: net8.0, net8.0-windows
 
 nuget System.IO.Ports 8.0.0
+nuget log4net
+nuget HandyControl
+nuget MediatR
+nuget Microsoft.AspNetCore
+nuget Microsoft.AspNetCore.Cors
+nuget Microsoft.Extensions.Logging.Log4Net.AspNetCore
+nuget Newtonsoft.Json
+nuget Microsoft.Extensions.Hosting 8.0.0
+nuget ReactiveProperty.WPF
+nuget ReactiveProperty
