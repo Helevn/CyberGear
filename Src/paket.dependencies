@@ -1,0 +1,7 @@
+source https://api.nuget.org/v3/index.json
+cache ./nuget-package-caches
+
+storage: none
+framework: net8.0, net8.0-windows
+
+nuget System.IO.Ports 8.0.0

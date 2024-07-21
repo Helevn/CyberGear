@@ -1,0 +1,17 @@
+STORAGE: NONE
+RESTRICTION: || (== net8.0) (== net8.0-windows7.0)
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    runtime.linux-arm.runtime.native.System.IO.Ports (8.0)
+    runtime.linux-arm64.runtime.native.System.IO.Ports (8.0)
+    runtime.linux-x64.runtime.native.System.IO.Ports (8.0)
+    runtime.native.System.IO.Ports (8.0)
+      runtime.linux-arm.runtime.native.System.IO.Ports (>= 8.0)
+      runtime.linux-arm64.runtime.native.System.IO.Ports (>= 8.0)
+      runtime.linux-x64.runtime.native.System.IO.Ports (>= 8.0)
+      runtime.osx-arm64.runtime.native.System.IO.Ports (>= 8.0)
+      runtime.osx-x64.runtime.native.System.IO.Ports (>= 8.0)
+    runtime.osx-arm64.runtime.native.System.IO.Ports (8.0)
+    runtime.osx-x64.runtime.native.System.IO.Ports (8.0)
+    System.IO.Ports (8.0)
+      runtime.native.System.IO.Ports (>= 8.0)
