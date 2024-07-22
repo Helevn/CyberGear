@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CyberGear.Client.ViewModels;
+using System.ComponentModel;
 using System.Windows;
 
 namespace CyberGear.Client
@@ -8,9 +9,19 @@ namespace CyberGear.Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly AppViewModel viewModel;
+
+        public MainWindow(AppViewModel viewModel)
         {
             InitializeComponent();
+            this.viewModel = viewModel;
+            this.viewModel.CurrentPage.Subscribe(page =>
+            {
+                if (page != null)
+                {
+                    this.navWin.Navigate(page);
+                }
+            });
         }
 
         private void Window_Closed(object sender, EventArgs e)
