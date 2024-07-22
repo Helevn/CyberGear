@@ -1,5 +1,5 @@
-﻿using CyberGear.Shared;
-using Microsoft.Extensions.Configuration;
+﻿using CyberGear.Client.MessageHandler;
+using CyberGear.Shared;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -13,9 +13,7 @@ namespace CyberGear.Client
             services.AddViews();
 
             #region Message Handlers
-            //services.AddMediatR(
-            //     typeof(MessageBoxNotificationHandler).Assembly
-            // );
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(UILogNotificationHandler).Assembly));
             #endregion
 
             services.AddOptions<AppOpt>().Bind(context.Configuration.GetSection("App"));

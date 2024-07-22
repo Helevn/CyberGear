@@ -1,8 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CyberGear.Client.ViewModels;
+using CyberGear.Client.Views;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
@@ -58,7 +59,9 @@ namespace CyberGear.Client
 
         private void SigninOperatorAsync(IServiceProvider sp)
         {
-            var mainWin = sp.GetRequiredService<MainWindow>() as MainWindow;
+            var appvm = sp.GetRequiredService<AppViewModel>();
+            var mainWin = sp.GetRequiredService<MainWindow>();
+            appvm.NavigateTo(UrlDefines.URL_Realtime);
             mainWin.Show();
         }
         private void Application_Startup(object sender, StartupEventArgs e)
