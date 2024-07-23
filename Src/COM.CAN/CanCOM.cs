@@ -4,7 +4,7 @@ namespace Can
 {
     public class CanCOM
     {
-        private SerialPort _port;
+        private SerialPort? _port;
         public readonly string PortName;
         public CanCOM(string portName)
         {
@@ -14,27 +14,20 @@ namespace Can
         public async Task<string> WriteAsync(byte[] cmd)
         {
             await EnsureConnectAsync();
-            _port.Write(cmd, 0, cmd.Length);
+            _port!.Write(cmd, 0, cmd.Length);
             return await ReadAsync();
         }
 
         public async Task<string> ReadAsync()
         {
-            ushort i = 0;
-            do
+            var buffers = new byte[_port!.BytesToRead];
+            if (buffers.Length > 0)
             {
-                if (i == ushort.MaxValue)
-                    return "";
-
-                var buffers = new byte[_port.BytesToRead];
-                if (buffers.Length > 0)
-                {
-                    _port.Read(buffers, 0, buffers.Length);
-                    await DisposeAsync();
-                    return Convert.ToHexString(buffers);
-                }
-
-            } while (true);
+                _port.Read(buffers, 0, buffers.Length);
+                await DisposeAsync();
+                return Convert.ToHexString(buffers);
+            }
+            return "";
         }
 
         public Task DisposeAsync()

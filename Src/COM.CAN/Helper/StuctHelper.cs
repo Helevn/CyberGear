@@ -27,19 +27,9 @@
         /// <param name="bytes"></param>
         /// <param name="afters"></param>
         /// <returns></returns>
-        public static byte[] Merge(this byte[] bytes, byte[] afters)
+        public static byte[] Merge(this byte[] bytes, IEnumerable<byte> afters)
         {
-            byte[] command = new byte[bytes.Length + afters.Length];
-
-            for (int i = 0; i < bytes.Length; i++)
-            {
-                command[i] = bytes[i];
-            }
-            for (int i = 0; i < afters.Length; i++)
-            {
-                command[bytes.Length + i] = afters[i];
-            }
-            return command;
+            return [.. bytes, .. afters];
         }
 
         public static byte[] UsbToCan(this byte[] bytes)
