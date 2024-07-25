@@ -7,10 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\Custom\CanConnectView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Update="Resources\UserControlStyle\DefaultComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
     <Page Update="Views\RealtimeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Custom\CanConnectView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

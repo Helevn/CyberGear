@@ -1,4 +1,4 @@
-﻿namespace Can.Helper
+﻿namespace COM.CAN.CanHelper
 {
     /// <summary>
     /// Can电机控制类

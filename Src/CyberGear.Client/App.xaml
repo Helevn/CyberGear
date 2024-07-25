@@ -19,6 +19,8 @@
                     <BooleanToVisibilityConverter x:Key="VisibleIfTrueConverter" />
                 </ResourceDictionary>
 
+                <ResourceDictionary Source="pack://application:,,,/Resources/UserControlStyle/DefaultComboBoxStyle.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

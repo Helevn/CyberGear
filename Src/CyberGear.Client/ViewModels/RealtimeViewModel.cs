@@ -1,4 +1,5 @@
-﻿using CyberGear.Shared.Notification;
+﻿using CyberGear.Client.ViewModels.Custom;
+using CyberGear.Shared.Notification;
 using Microsoft.Extensions.Logging;
 using Reactive.Bindings;
 using System.Collections.ObjectModel;
@@ -9,10 +10,10 @@ namespace CyberGear.Client.ViewModels
     {
         private readonly ILogger<RealtimeViewModel> _logger;
 
-        public RealtimeViewModel(ILogger<RealtimeViewModel> logger)
+        public RealtimeViewModel(ILogger<RealtimeViewModel> logger, CanConnectViewModel canConnectViewModel)
         {
             this._logger = logger;
-
+            this.CanConnectViewModel = canConnectViewModel;
             this.AddLogMsg = new ReactiveCommand<LogMessage>().WithSubscribe(s =>
             {
                 try
@@ -33,5 +34,6 @@ namespace CyberGear.Client.ViewModels
 
         public ObservableCollection<LogMessage> Logs { get; } = [];
         public ReactiveCommand<LogMessage> AddLogMsg { get; }
+        public CanConnectViewModel CanConnectViewModel { get; }
     }
 }

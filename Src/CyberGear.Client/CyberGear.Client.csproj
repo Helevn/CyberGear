@@ -12,9 +12,16 @@
     <None Remove="Resources\Images\bj1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Remove="Resources\DefaultComboBoxStyle.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\UserControlStyle\DefaultComboBoxStyle.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\COM.CAN\COM.CAN.csproj" />
     <ProjectReference Include="..\CyberGear.Shared\CyberGear.Shared.csproj" />
   </ItemGroup>
   <ItemGroup>

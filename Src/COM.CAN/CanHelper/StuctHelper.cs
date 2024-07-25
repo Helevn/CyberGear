@@ -1,4 +1,4 @@
-﻿namespace Can.Helper
+﻿namespace COM.CAN.CanHelper
 {
     public static class StuctExtension
     {

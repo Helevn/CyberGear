@@ -1,6 +1,8 @@
 ﻿
 using CyberGear.Client.ViewModels;
+using CyberGear.Client.ViewModels.Custom;
 using CyberGear.Client.Views;
+using CyberGear.Client.Views.Custom;
 using CyberGear.Shared;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -29,8 +31,11 @@ namespace CyberGear.Client
                 return vm;
             });
             services.AddSingleton<MainWindow>();
+
             services.AddSingleton<RealtimeView>();
             services.AddSingleton<RealtimeViewModel>();
+
+            services.AddSingleton<CanConnectViewModel>();
             return services;
         }
     }

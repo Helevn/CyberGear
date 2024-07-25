@@ -2,9 +2,12 @@
     x:Class="CyberGear.Client.Views.RealtimeView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:custom="clr-namespace:CyberGear.Client.Views.Custom"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:hc="https://handyorg.github.io/handycontrol"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:CyberGear.Client.ViewModels"
+    d:DataContext="{d:DesignInstance Type=vm:RealtimeViewModel}"
     d:DesignHeight="1080"
     d:DesignWidth="1920"
     mc:Ignorable="d">
@@ -80,6 +83,8 @@
                     <Setter Property="Width" Value="150" />
                 </Style>
             </GroupBox.Resources>
+
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel}" />
         </GroupBox>
 
         <GroupBox

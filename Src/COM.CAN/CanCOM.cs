@@ -1,15 +1,11 @@
 ﻿using System.IO.Ports;
 
-namespace Can
+namespace COM.CAN
 {
-    public class CanCOM
+    public class CanCOM(string portName)
     {
         private SerialPort? _port;
-        public readonly string PortName;
-        public CanCOM(string portName)
-        {
-            this.PortName = portName;
-        }
+        public readonly string PortName = portName;
 
         public async Task<string> WriteAsync(byte[] cmd)
         {
