@@ -360,13 +360,12 @@
         /// Jog+
         /// </summary>
         /// <returns></returns>
-        public byte[] CmdSetJogForward(float speed)
+        public byte[] CmdSetJogForward()
         {
             byte[] extend = [(byte)Communicate.单个参数写入, 0x00, computerId, canId];
             extend = extend.UsbToCan();
 
-            var res = speed.ToBytes().Skip(2).ToArray();
-            byte[] data = new byte[] { 0x05, 0x70, 0x00, 0x00, 0x07, 0x01 }.Merge(res);
+            byte[] data = new byte[] { 0x05, 0x70, 0x00, 0x00, 0x07, 0x01, 0x95, 0x54 };
             var command = FH()
                 .Merge(extend)
                 .Merge([(byte)data.Length])

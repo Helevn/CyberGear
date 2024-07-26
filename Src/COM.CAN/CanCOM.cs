@@ -1,4 +1,5 @@
 ﻿using System.IO.Ports;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace COM.CAN
 {
@@ -6,24 +7,36 @@ namespace COM.CAN
     {
         private SerialPort? _port;
         public readonly string PortName = portName;
+        public bool Connect => _port?.IsOpen ?? false;
 
         public async Task<string> WriteAsync(byte[] cmd)
         {
             await EnsureConnectAsync();
             _port!.Write(cmd, 0, cmd.Length);
-            return await ReadAsync();
+            var cancle = new CancellationTokenSource(1000);
+            do
+            {
+                var rev = await ReadAsync();
+                if (!string.IsNullOrEmpty(rev))
+                    return rev;
+            } while (!cancle.Token.IsCancellationRequested);
+
+            throw new Exception($"串口{this.PortName}返回超时");
         }
 
-        public async Task<string> ReadAsync()
+        public Task<string> ReadAsync()
         {
-            var buffers = new byte[_port!.BytesToRead];
-            if (buffers.Length > 0)
+            string rev = "";
+            do
             {
-                _port.Read(buffers, 0, buffers.Length);
-                await DisposeAsync();
-                return Convert.ToHexString(buffers);
-            }
-            return "";
+                var buffers = new byte[_port!.BytesToRead];
+                if (buffers.Length > 0)
+                {
+                    _port.Read(buffers, 0, buffers.Length);
+                    rev += Convert.ToHexString(buffers);
+                }
+            } while (_port!.BytesToRead > 0);
+            return Task.FromResult(rev);
         }
 
         public Task DisposeAsync()

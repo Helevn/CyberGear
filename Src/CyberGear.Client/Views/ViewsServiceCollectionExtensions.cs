@@ -35,7 +35,12 @@ namespace CyberGear.Client
             services.AddSingleton<RealtimeView>();
             services.AddSingleton<RealtimeViewModel>();
 
-            services.AddSingleton<CanConnectViewModel>();
+            services.AddSingleton(sp => ActivatorUtilities.CreateInstance<CanConnectViewModel>(sp, CanNameDefines.CanName1));
+            services.AddSingleton(sp => ActivatorUtilities.CreateInstance<CanConnectViewModel>(sp, CanNameDefines.CanName2));
+            services.AddSingleton(sp => ActivatorUtilities.CreateInstance<CanConnectViewModel>(sp, CanNameDefines.CanName3));
+            services.AddSingleton(sp => ActivatorUtilities.CreateInstance<CanConnectViewModel>(sp, CanNameDefines.CanName4));
+            services.AddSingleton(sp => ActivatorUtilities.CreateInstance<CanConnectViewModel>(sp, CanNameDefines.CanName5));
+            services.AddSingleton(sp => ActivatorUtilities.CreateInstance<CanConnectViewModel>(sp, CanNameDefines.CanName6));
             return services;
         }
     }

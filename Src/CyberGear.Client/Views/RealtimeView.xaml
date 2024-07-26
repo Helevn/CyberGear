@@ -57,8 +57,12 @@
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*" />
-            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/Resources/Images/bj1.png" />
@@ -66,7 +70,6 @@
 
         <GroupBox
             Grid.Row="0"
-            Grid.RowSpan="2"
             Grid.Column="0"
             Style="{DynamicResource GroupBoxOriginal}">
             <GroupBox.Resources>
@@ -84,12 +87,117 @@
                 </Style>
             </GroupBox.Resources>
 
-            <custom:CanConnectView DataContext="{Binding CanConnectViewModel}" />
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel1}" />
         </GroupBox>
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Style="{DynamicResource GroupBoxOriginal}">
+            <GroupBox.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
 
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Width" Value="150" />
+                </Style>
+            </GroupBox.Resources>
+
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel2}" />
+        </GroupBox>
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="2"
+            Style="{DynamicResource GroupBoxOriginal}">
+            <GroupBox.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Width" Value="150" />
+                </Style>
+            </GroupBox.Resources>
+
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel3}" />
+        </GroupBox>
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="3"
+            Style="{DynamicResource GroupBoxOriginal}">
+            <GroupBox.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Width" Value="150" />
+                </Style>
+            </GroupBox.Resources>
+
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel4}" />
+        </GroupBox>
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="4"
+            Style="{DynamicResource GroupBoxOriginal}">
+            <GroupBox.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Width" Value="150" />
+                </Style>
+            </GroupBox.Resources>
+
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel5}" />
+        </GroupBox>
+        <GroupBox
+            Grid.Row="0"
+            Grid.Column="5"
+            Style="{DynamicResource GroupBoxOriginal}">
+            <GroupBox.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="40px" />
+                    <Setter Property="FontFamily" Value="NSimSun" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Width" Value="150" />
+                </Style>
+            </GroupBox.Resources>
+
+            <custom:CanConnectView DataContext="{Binding CanConnectViewModel6}" />
+        </GroupBox>
         <GroupBox
             Grid.Row="1"
-            Grid.Column="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="6"
             Margin="10"
             Style="{DynamicResource GroupBoxBaseStyle}">
             <GroupBox.HeaderTemplate>
@@ -121,6 +229,7 @@
             <ScrollViewer
                 Name="scroll"
                 HorizontalScrollBarVisibility="Auto"
+                ScrollChanged="Scroll_ScrollChanged"
                 VerticalScrollBarVisibility="Auto ">
                 <ItemsControl x:Name="logs" ItemsSource="{Binding Logs}">
                     <ItemsControl.ItemTemplate>

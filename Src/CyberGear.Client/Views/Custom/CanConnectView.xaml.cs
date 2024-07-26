@@ -25,5 +25,37 @@ namespace CyberGear.Client.Views.Custom
         {
             InitializeComponent();
         }
+
+        #region Jog
+        private void Jogadd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.DataContext is CanConnectViewModel vm)
+            {
+                vm.CmdJogForward.Execute();
+            }
+        }
+        private void Jogadd_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (this.DataContext is CanConnectViewModel vm)
+            {
+                vm.CmdJogStop.Execute();
+            }
+        }
+
+        private void Jogsub_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (this.DataContext is CanConnectViewModel vm)
+            {
+                vm.CmdJogReverse.Execute();
+            }
+        }
+        private void Jogsub_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (this.DataContext is CanConnectViewModel vm)
+            {
+                vm.CmdJogStop.Execute();
+            }
+        }
+        #endregion
     }
 }

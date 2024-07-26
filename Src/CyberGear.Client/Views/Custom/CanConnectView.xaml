@@ -23,17 +23,25 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <TextBlock
+                x:Name="CanNameId"
+                FontSize="25"
+                Style="{StaticResource TextBlockDefaultDanger}"
+                Text="{Binding CanNameid.Value}" />
+        </StackPanel>
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
             Orientation="Horizontal">
             <ComboBox
+                Width="100"
                 Margin="5,0,5,0"
                 HorizontalContentAlignment="Left"
                 VerticalContentAlignment="Center"
@@ -43,10 +51,61 @@
 
             <Button
                 x:Name="reload"
+                Width="50"
                 Margin="5,0,5,0"
                 Command="{Binding CmdReLoad}"
                 Content="刷新"
                 Style="{StaticResource ButtonPrimary}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <TextBox
+                x:Name="canid"
+                MinWidth="100"
+                MaxHeight="50"
+                Style="{StaticResource TextBoxExtendBaseStyle}"
+                Text="{Binding Canid.Value}" />
+            <Button
+                x:Name="connect"
+                Width="50"
+                Margin="5,0,5,0"
+                Command="{Binding CmdConnect}"
+                Content="连接"
+                Style="{StaticResource ButtonSuccess}" />
+            <Button
+                x:Name="disconnect"
+                Width="50"
+                Margin="5,0,5,0"
+                Command="{Binding CmdDisConnect}"
+                Content="断开"
+                Style="{StaticResource ButtonDanger}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="3"
+            Grid.Column="1"
+            Orientation="Horizontal">
+            <Button
+                x:Name="jogadd"
+                Width="100"
+                Margin="5,0,5,0"
+                Content="Jog+"
+                IsEnabled="{Binding CanEnable.Value}"
+                PreviewMouseLeftButtonDown="Jogadd_MouseDown"
+                PreviewMouseLeftButtonUp="Jogadd_MouseUp"
+                Style="{StaticResource ButtonWarning}" />
+            <Button
+                x:Name="jogsub"
+                Width="100"
+                Margin="5,0,5,0"
+                Content="Jog-"
+                IsEnabled="{Binding CanEnable.Value}"
+                PreviewMouseLeftButtonDown="Jogsub_MouseDown"
+                PreviewMouseLeftButtonUp="Jogsub_MouseUp"
+                Style="{StaticResource ButtonWarning}" />
         </StackPanel>
     </Grid>
 </UserControl>
